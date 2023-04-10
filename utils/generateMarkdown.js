@@ -1,24 +1,35 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
-  let yourLicenseBadge = "";
-  if (License === First) {
-    yourLicenseBadge = `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)]`;
-  } else if (License === Second) {
-    yourLicenseBadge = `[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)]`;
-  } else if (License === Third) {
-    yourLicenseBadge = `[![License: Artistic-2.0](https://img.shields.io/badge/License-Perl-0298c3.svg)]`;
-  } else {
-    yourLicenseBadge = "";
+  switch (license) {
+    case "MIT":
+      return `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)]`;
+      break;
+    case "GPL-v3":
+      return `[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)]`;
+      break;
+    case "Perl":
+      return `[![License: Artistic-2.0](https://img.shields.io/badge/License-Perl-0298c3.svg)]`;
+      break;
   }
-  return yourLicenseBadge;
 }
+//   if ((License = First)) {
+//     yourLicenseBadge = `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)]`;
+//   } else if (License === Second) {
+//     yourLicenseBadge = `[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)]`;
+//   } else if (License === Third) {
+//     yourLicenseBadge = `[![License: Artistic-2.0](https://img.shields.io/badge/License-Perl-0298c3.svg)]`;
+//   } else {
+//     yourLicenseBadge = "";
+//   }
+//   return yourLicenseBadge;
+// }
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
   let yourLicenseLink = "";
-  if (License === "MIT") {
+  if ((License = "MIT")) {
     yourLicenseLink = `(https://opensource.org/licenses/MIT)`;
   } else if (License === "GPL-v3") {
     yourLicenseLink = `(https://www.gnu.org/licenses/gpl-3.0)`;
@@ -47,9 +58,10 @@ ${renderLicenseBadge(License)}
 `;
 }
 
-module.exports = generateMarkdown;
-module.exports = renderLicenseBadge;
-module.exports = renderLicenseLink;
-module.exports = renderLicenseSection;
-module.exports = yourLicenseBadge;
-module.exports = yourLicenseLink;
+module.exports = { renderLicenseBadge, renderLicenseLink };
+// module.exports = generateMarkdown;
+// module.exports = renderLicenseBadge;
+// module.exports = renderLicenseLink;
+// module.exports = renderLicenseSection;
+// module.exports = yourLicenseBadge;
+// module.exports = yourLicenseLink;

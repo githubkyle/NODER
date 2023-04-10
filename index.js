@@ -4,6 +4,7 @@ const fs = require("fs");
 const First = "MIT";
 const Second = "GPL-v3";
 const Third = "Perl";
+const GM = require("./utils/generateMarkdown.js");
 // TODO: Include packages needed for this application== npm i
 // Description, Table of Contents, Installation, Usage, License, Contributing, Tests, and Questions
 // TODO: Create an array of questions for user input
@@ -60,12 +61,10 @@ const promptUser = () => {
 };
 const generateREADME = ({
   Title,
-  yourLicenseBadge,
   Description,
   Installation,
   Usage,
   License,
-  yourLicenseLink,
   Contributing,
   Tests,
   Email,
@@ -74,7 +73,7 @@ const generateREADME = ({
   `## Title
 
   This project is titled ${Title}
-  ${yourLicenseBadge}
+  ${GM.renderLicenseBadge(License)}
   
   ## Description
 
@@ -94,11 +93,11 @@ const generateREADME = ({
 
   [Go to Questions section](#questions)
   
-  #Installation
+## Installation
 
-  ${Installation}
+${Installation}
 
-#Usage
+## Usage
 
 ${Usage}
 
@@ -110,7 +109,7 @@ ${Contributing}
 
 ${License}
 
-${yourLicenseLink}
+${GM.renderLicenseLink()}
 
 ## Tests 
 
