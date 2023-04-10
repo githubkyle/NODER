@@ -1,8 +1,9 @@
 // TODO: Include packages needed for this application
 const inquirer = require("inquirer");
 const fs = require("fs");
-const First = "Greatest License ever";
-const Second = "Another wonderful license";
+const First = "MIT";
+const Second = "GPL-v3";
+const Third = "Perl";
 // TODO: Include packages needed for this application== npm i
 // Description, Table of Contents, Installation, Usage, License, Contributing, Tests, and Questions
 // TODO: Create an array of questions for user input
@@ -21,11 +22,6 @@ const promptUser = () => {
     },
     {
       type: "input",
-      message: "What are the table of contents?",
-      name: "ToC"
-    },
-    {
-      type: "input",
       message: "How do we install the app?",
       name: "Installation"
     },
@@ -38,7 +34,7 @@ const promptUser = () => {
       type: "rawlist",
       name: "License",
       message: "What license does this app have?",
-      choices: [First, Second]
+      choices: [First, Second, Third]
     },
     {
       type: "input",
@@ -52,25 +48,33 @@ const promptUser = () => {
     },
     {
       type: "input",
-      message: "What questions do you have?",
-      name: "Questions"
+      message: "What is your e-mail address?",
+      name: "Email"
+    },
+    {
+      type: "input",
+      message: "What is your Github profile name?",
+      name: "Github"
     }
   ]);
 };
 const generateREADME = ({
   Title,
+  yourLicenseBadge,
   Description,
-  ToC,
   Installation,
   Usage,
   License,
+  yourLicenseLink,
   Contributing,
   Tests,
-  Questions
+  Email,
+  Github
 }) =>
   `## Title
 
-  ${Title}
+  This project is titled ${Title}
+  ${yourLicenseBadge}
   
   ## Description
 
@@ -78,13 +82,18 @@ const generateREADME = ({
 
   ## Table of Contents
 
-  ${ToC}
+  [Go to Installation section](#installation)
+  [Go to Usage section](#usage)
+  [Go to Credits section](#credits)
+  [Go to License section](#license)
+  [Go to Tests section](#tests)
+  [Go to Questions section](#questions)
   
-  ## Installation
+  #Installation
 
   ${Installation}
 
-## Usage
+#Usage
 
 ${Usage}
 
@@ -95,6 +104,7 @@ ${Contributing}
 ## License
 
 ${License}
+${yourLicenseLink}
 
 ## Tests 
 
@@ -102,14 +112,15 @@ ${Tests}
 
 ## Questions
 
-${Questions}`;
+You can reach me at ${Email} with any additional questions.
+
+My Github profile is named ${Github}, reachable at https://www.github.com/${Github}`;
 
 // TODO: Create a function to write README file
-function writeToFile(generateREADME, answers) {
-  fs.writeFile("README.md", generateREADME.toString(), err =>
-    err ? console.log(err) : console.log("Successfully created README.md!")
-  );
-}
+function writeToFile(generateREADME, answers) {}
+fs.writeFile("README.md", generateREADME.toString(), err =>
+  err ? console.log(err) : console.log("Successfully created README.md!")
+);
 
 // TODO: Create a function to initialize app
 const init = () => {
