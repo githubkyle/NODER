@@ -82,12 +82,12 @@ const generateREADME = ({
 
   ## Table of Contents
 
-  [Go to Installation section](#installation)
-  [Go to Usage section](#usage)
-  [Go to Credits section](#credits)
-  [Go to License section](#license)
-  [Go to Tests section](#tests)
-  [Go to Questions section](#questions)
+  -[Go to Installation section](#installation)
+  -[Go to Usage section](#usage)
+  -[Go to Credits section](#credits)
+  -[Go to License section](#license)
+  -[Go to Tests section](#tests)
+  -[Go to Questions section](#questions)
   
   #Installation
 
