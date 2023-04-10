@@ -1,7 +1,8 @@
 // TODO: Include packages needed for this application
 const inquirer = require("inquirer");
 const fs = require("fs");
-
+const First = "Greatest License ever";
+const Second = "Another wonderful license";
 // TODO: Include packages needed for this application== npm i
 // Description, Table of Contents, Installation, Usage, License, Contributing, Tests, and Questions
 // TODO: Create an array of questions for user input
@@ -34,9 +35,10 @@ const promptUser = () => {
       name: "Usage"
     },
     {
-      type: "input",
+      type: "rawlist",
+      name: "License",
       message: "What license does this app have?",
-      name: "License"
+      choices: [First, Second]
     },
     {
       type: "input",
@@ -66,47 +68,60 @@ const generateREADME = ({
   Tests,
   Questions
 }) =>
-  `## Description
+  `## Title
 
-  Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
+  ${Title}
   
-  - What was your motivation?
-  - Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")
-  - What problem does it solve?
-  - What did you learn?
+  ## Description
+
+  ${Description}
+
+  ## Table of Contents
+
+  ${ToC}
   
   ## Installation
 
-What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
+  ${Installation}
 
 ## Usage
 
-Provide instructions and examples for use. Include screenshots as needed.
-
-To add a screenshot, create an FILLER folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
-
-    `````` // ![alt text](assets/images/screenshot.png)
+${Usage}
 
 ## Credits
 
-List your collaborators, if any, with links to their GitHub profiles.
+${Contributing}
 
-If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
+## License
 
-If you followed tutorials, include links to those here as well.
+${License}
 
-## License`;
+## Tests 
+
+${Tests}
+
+## Questions
+
+${Questions}`;
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
-fs.writeFile("README.md", READMEContent, err =>
-  err ? console.log(err) : console.log("Successfully created README.md!")
-);
+function writeToFile(generateREADME, answers) {
+  fs.writeFile("README.md", generateREADME.toString(), err =>
+    err ? console.log(err) : console.log("Successfully created README.md!")
+  );
+}
+
 // TODO: Create a function to initialize app
 const init = () => {
   promptUser()
-    .then(answers => writeFile("README.md", generateREADME(answers)))
-    .then(() => console.log("Successfully wrote to index.html"))
+    .then(answers =>
+      fs.writeFile("README.md", generateREADME(answers), err => {
+        if (err) {
+          console.log(err);
+        }
+      })
+    )
+    .then(() => console.log("Successfully wrote to README.md"))
     .catch(err => console.error(err));
 };
 
