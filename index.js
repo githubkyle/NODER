@@ -73,6 +73,7 @@ const generateREADME = ({
   `## Title
 
   This project is titled ${Title}
+
   ${GM.renderLicenseBadge(License)}
   
   ## Description
@@ -110,6 +111,7 @@ ${Contributing}
 ${License}
 
 ${GM.renderLicenseLink()}
+${GM.renderLicenseLink2()}
 
 ## Tests 
 
@@ -120,12 +122,6 @@ ${Tests}
 You can reach me at ${Email} with any additional questions.
 
 My Github profile is named ${Github}, reachable at https://www.github.com/${Github}`;
-
-// TODO: Create a function to write README file
-function writeToFile(generateREADME, answers) {}
-fs.writeFile("README.md", generateREADME.toString(), err =>
-  err ? console.log(err) : console.log("Successfully created README.md!")
-);
 
 // TODO: Create a function to initialize app
 const init = () => {

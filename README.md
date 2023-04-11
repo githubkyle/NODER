@@ -1,50 +1,52 @@
 ## Title
 
-This project is titled 123
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)]
+  This project is titled First runthrough
 
-## Description
+  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)]
+  
+  ## Description
 
-123
+  A very lengthy description
 
-## Table of Contents
+  ## Table of Contents
 
-[Go to Installation section](#installation)
+  [Go to Installation section](#installation)
 
-[Go to Usage section](#usage)
+  [Go to Usage section](#usage)
 
-[Go to Credits section](#credits)
+  [Go to Credits section](#credits)
 
-[Go to License section](#license)
+  [Go to License section](#license)
 
-[Go to Tests section](#tests)
+  [Go to Tests section](#tests)
 
-[Go to Questions section](#questions)
-
+  [Go to Questions section](#questions)
+  
 ## Installation
 
-123
+we install it by plugging it in]
 
 ## Usage
 
-123
+use it by pushing buttons as they appear
 
 ## Credits
 
-123
+no one but myself
 
 ## License
 
 MIT
 
-(https://opensource.org/licenses/MIT)
+undefined
+undefined
 
-## Tests
+## Tests 
 
-123
+no tests at this time
 
 ## Questions
 
-You can reach me at 123 with any additional questions.
+You can reach me at kyle@generic.com with any additional questions.
 
-My Github profile is named 123, reachable at https://www.github.com/123
+My Github profile is named kyle, reachable at https://www.github.com/kyle
