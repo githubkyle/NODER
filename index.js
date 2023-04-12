@@ -110,8 +110,8 @@ ${Contributing}
 
 ${License}
 
-${GM.renderLicenseLink()}
-${GM.renderLicenseLink2()}
+${GM.renderLicenseLink(License)}
+
 
 ## Tests 
 
