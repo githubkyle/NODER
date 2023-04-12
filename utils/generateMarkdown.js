@@ -32,17 +32,6 @@ function renderLicenseLink(license) {
   }
 }
 
-function renderLicenseLink2(license) {
-  var yourLicenseLink = "";
-  if (license === "MIT") {
-    yourLicenseLink = `(https://opensource.org/licenses/MIT)`;
-  } else if (license === "GPL-v3") {
-    yourLicenseLink = `(https://www.gnu.org/licenses/gpl-3.0)`;
-  } else if (license === "Perl") {
-    yourLicenseLink = `(https://opensource.org/licenses/Artistic-2.0)`;
-  }
-}
-
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
