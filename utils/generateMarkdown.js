@@ -49,4 +49,4 @@ ${renderLicenseBadge(License)}
 `;
 }
 
-module.exports = { renderLicenseBadge, renderLicenseLink, renderLicenseLink2 };
+module.exports = { renderLicenseBadge, renderLicenseLink };
