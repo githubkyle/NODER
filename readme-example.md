@@ -4,7 +4,7 @@ This is my README generator.
 ## Description
 This application creates a README from user input. 
 Technologies involved were Inquirer, node.js,  as well the file system module., or "fs".
-
+I solved the issue about the license badge not displaying correctly.
 
 ## Installation 
 Simply run node index.js and the scripts will run, generating a README file from the input provided. 
